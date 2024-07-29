@@ -1,5 +1,7 @@
-data base deliver
+CREATE DATABASE deliver;
 
+
+USE deliver;
 
 
 CREATE TABLE commande (
@@ -10,7 +12,7 @@ CREATE TABLE commande (
     delegation VARCHAR(255) NOT NULL,
     localite VARCHAR(255) NOT NULL,
     adresse_complementaire VARCHAR(255) NOT NULL,
-    telephone VARCHAR(20) NOT NULL,
+    telephone VARCHAR(20),
     telephone2 VARCHAR(20),
     designation VARCHAR(255) NOT NULL,
     nombre_article INT NOT NULL,
@@ -19,11 +21,23 @@ CREATE TABLE commande (
 );
 
 
-CREATE TABLE Utilisateur (
+CREATE TABLE utilisateur (
     noUtilisateur INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(255) NOT NULL,
+    code INT NOT NULL,
     password VARCHAR(255) NOT NULL,
-    role VARCHAR(50) NOT NULL,
+    role INT NOT NULL,
+    gsm VARCHAR(15) NOT NULL,
+    email VARCHAR(255) NOT NULL
+);
+
+
+CREATE TABLE user_request (
+    noUtilisateur INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255) NOT NULL,
+    code INT NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    role INT NOT NULL,
     gsm VARCHAR(15) NOT NULL,
     email VARCHAR(255) NOT NULL
 );
